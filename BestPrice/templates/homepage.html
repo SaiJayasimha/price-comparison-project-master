@@ -1,0 +1,26 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+{% block content %}
+  <head>
+    <meta charset="utf-8">
+    <title>BestPrice</title>
+    <link rel="stylesheet" href="{% static 'homepage-styles.css' %}">
+  </head>
+  <body>
+    <section class="hero">
+      <div class="site-description">
+        <h2>E-commerce Price comparision</h2>
+        <h3><font color="white">Shop with a difference</font></h3>
+        {% if user.is_authenticated %}
+
+        {% else %}
+        <a href="{% url 'accounts:login' %}" class="tag-login-base">Login</a>
+        <a href="{% url 'accounts:register' %}" class="tag-register-base">Register</a>
+        {% endif %}
+      </div>
+    </section>
+    <span class="created-by"><p>Created by Team - 3088</p></span>
+  </body>
+{% endblock %}
